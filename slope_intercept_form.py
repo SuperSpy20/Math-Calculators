@@ -1,61 +1,94 @@
+import math
 try:
-    slope_int_input = input('What is the coordinate that lies on the line?\n').split(',')
-    slope_input = input('What is the slope of the line?\n')
+    xy = "-21, -30".split(",")#input('What coordinates are on the line?\n').split(',')
+    slope = "-19"#input('What is the slope of the line?\n')
 
-    p = list(slope_int_input)
-    x1 = p[0]
-    y1 = p[1]
+    xy = list(xy)
+    x1 = xy[0]
+    y1 = xy[1]
 
     x1 = int(x1)
     y1 = int(y1)
 
-    q = int(slope_input)
+    slope = int(slope)
 except:
-    print('\n\nYou must enter a proper coordinate and slope!')
+    print('\n\nYou must input a correct slope and correct coordinate!')
     exit()
 
-def slope_intercept(x1, y1, slope):
-
-    if slope == 0:
-        print('\n\nThe slope must not be zero!')
-        exit()
-
-    linear_0 = "y - {} = {}(x - {})   -->".format(y1, slope, x1)
-    if y1 < 0:
-        y2 = "{}".format(y1)
-        y3 = y2.strip('-')
-    else:
-        y3 = y1
-     
-        linear_0 = "y + {} = {}(x - {})   -->".format(y3, slope, x1)
+def linear_equation(x1, y1, slope):
+    
     if x1 < 0:
-        x2 = "{}".format(x1)
-        x3 = x2.strip('-')
+        x_operator = "+"
+        x_abs = abs(x1)
+    else:
+        x_operator = "-"
+        x_abs = x1
         
-        linear_0 = "y + {} = {}(x + {})   -->".format(y3, slope, x3)
-    
-    print(linear_0)
-    
-    y_int = (slope)*(x1)
-    
-    linear_1 = "y - {} = {}x - {}   -->".format(y3, slope, y_int)
     if y1 < 0:
-        linear_1 = "y + {} = {}x - {}   -->".format(y3, slope, y_int)
+        y_operator = "+"
+        y_abs = abs(y1)
+    else:
+        y_operator = "-"
+        y_abs = y1
+        
     
-    print(linear_1)
+    # if slope < 0:
+        # if x_operator == "-":
+                # x_operator = "+"
     
-    y_int_final = (y1)-(y_int)
+    #First Linear Equation
+    linear_equation = "\ny {} {} = {}(x {} {})  -->".format(y_operator, y_abs, slope, x_operator, x_abs)
     
-    linear_2 = "\ny = {}x {}".format(slope, y_int_final)
+    print(linear_equation)
 
+    y_int = (slope) * (x_abs)
+    
+            
+    if y_int > 0:
+        if x_operator == "-":
+            y_int = int("-{}".format(y_int))
+            y_int_space = abs(y_int)
+            
+    if slope < 0:
+        if x_operator == "-":
+            if y_int < 0:
+                y_int = abs(y_int)
+                x_operator = "+"
+
+    if y_int < 0:
+        if x_operator == "+":
+            x_operator = "-"
+            y_int_space = abs(y_int)
+            
+    #Stating that if a minus sign is next to a negative, then remove print the absolute value of the number
+    if y_int < 0:
+        if x_operator == "-":
+            y_int_space = abs(y_int)
+            
+    #Second Linear Equation
+    linear_equation = "y {} {} = {}x {} {}  -->".format(y_operator, y_abs, slope, x_operator, y_int)
+    
+    if y_int < 0:
+        if x_operator == "-":
+            linear_equation = "y {} {} = {}x {} {}  -->".format(y_operator, y_abs, slope, x_operator, y_int_space)
+            
+    
+    print(linear_equation)
+    
+    y_int_final = (y1) + (y_int)
+        
+    y_int_space = abs(y_int_final)
+        
+    #Third Linear Equation
+    linear_equation = "y = {}x {} {}".format(slope, x_operator, y_int_space)
+    
     if y_int_final > 0:
-        linear_2 = "\n\ny = {}x + {}".format(slope, y_int_final)
-    
-    return linear_2
-    
+        if x_operator == "-":
+            linear_equation = "y = {}x {} {}".format(slope, x_operator, y_int_space)
     
     
-
-slope_calculation = slope_intercept(x1, y1, q)
-
-print('\n\nYour Linear Equation: %s'%slope_calculation)
+    
+    return linear_equation
+    
+line = linear_equation(x1,y1,slope)
+print("\nLinear Equation: {}".format(line))
