@@ -1,7 +1,7 @@
 import math
 try:
-    xy = "-21, -30".split(",")#input('What coordinates are on the line?\n').split(',')
-    slope = "-19"#input('What is the slope of the line?\n')
+    xy = input('What coordinates are on the line?\n').split(',')
+    slope = input('What is the slope of the line?\n')
 
     xy = list(xy)
     x1 = xy[0]
