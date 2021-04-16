@@ -7,10 +7,10 @@ try:
     x1 = xy[0]
     y1 = xy[1]
 
-    x1 = int(x1)
-    y1 = int(y1)
+    x1 = float(x1)
+    y1 = float(y1)
 
-    slope = int(slope)
+    slope = float(slope)
 except:
     print('\n\nYou must input a correct slope and correct coordinate!')
     exit()
@@ -31,22 +31,20 @@ def linear_equation(x1, y1, slope):
         y_operator = "-"
         y_abs = y1
         
-    
-    # if slope < 0:
-        # if x_operator == "-":
-                # x_operator = "+"
-    
-    #First Linear Equation
+        
+        
     linear_equation = "\ny {} {} = {}(x {} {})  -->".format(y_operator, y_abs, slope, x_operator, x_abs)
     
     print(linear_equation)
 
     y_int = (slope) * (x_abs)
     
+    
+    
             
     if y_int > 0:
         if x_operator == "-":
-            y_int = int("-{}".format(y_int))
+            y_int = float("-{}".format(y_int))
             y_int_space = abs(y_int)
             
     if slope < 0:
@@ -60,17 +58,19 @@ def linear_equation(x1, y1, slope):
             x_operator = "-"
             y_int_space = abs(y_int)
             
-    #Stating that if a minus sign is next to a negative, then remove print the absolute value of the number
     if y_int < 0:
         if x_operator == "-":
             y_int_space = abs(y_int)
             
-    #Second Linear Equation
+            
+            
     linear_equation = "y {} {} = {}x {} {}  -->".format(y_operator, y_abs, slope, x_operator, y_int)
     
     if y_int < 0:
         if x_operator == "-":
             linear_equation = "y {} {} = {}x {} {}  -->".format(y_operator, y_abs, slope, x_operator, y_int_space)
+            
+            
             
     
     print(linear_equation)
@@ -79,7 +79,6 @@ def linear_equation(x1, y1, slope):
         
     y_int_space = abs(y_int_final)
         
-    #Third Linear Equation
     linear_equation = "y = {}x {} {}".format(slope, x_operator, y_int_space)
     
     if y_int_final > 0:
