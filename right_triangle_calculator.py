@@ -8,37 +8,37 @@ try:
         p = abs(p)
     
     if p >= 90.0:
+        p_1 = True
         print("\n\nThe angle you are measuring must be acute!")
         exit()
+    else:
+        p_1 = False
     
     if "hyp" in c_given:
         x = True
-        #print("{}#1".format(x))
     else:
         x = False
-        #print("{}#1_1".format(x))
         
         
     if "opp" in c_given:
         y = True
-        #print("{}#2".format(y))
     else:
         y = False
-        #print("{}#2_1".format(y))
+
         
         
     if "adj" in c_given:
         z = True
-        #print("{}#3".format(z))
     else:
         z = False
-        #print("{}#3_1".format(z))
-    
-    opp_angle = (90)-(p)
     
 except:
-    print("\n\nYou must specify the missing leg!")
+    if p_1 == True:
+        exit()
+    print("\n\nYou must give an angle less than 90 degrees and give a specific leg length!")
     exit()
+    
+opp_angle = (90)-(p)
 
 def angle_leg_algebra(p, c_1):
     if x == True:
