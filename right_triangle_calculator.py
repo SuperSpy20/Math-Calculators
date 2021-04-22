@@ -4,7 +4,13 @@ try:
     c_given = input("Is the given leg the hypotenuse, opposite, or adjacent?\n").lower()
     c_1 = float(input("What is the length of the given leg?\n"))
 
-
+    if p < 0.0:
+        p = abs(p)
+    
+    if p >= 90.0:
+        print("\n\nThe angle you are measuring must be acute!")
+        exit()
+    
     if "hyp" in c_given:
         x = True
         #print("{}#1".format(x))
