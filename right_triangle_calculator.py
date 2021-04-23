@@ -18,20 +18,16 @@ try:
         x = True
     else:
         x = False
-        
-        
+                
     if "opp" in c_given:
         y = True
     else:
         y = False
 
-        
-        
     if "adj" in c_given:
         z = True
     else:
         z = False
-    
 except:
     if p_1 == True:
         exit()
