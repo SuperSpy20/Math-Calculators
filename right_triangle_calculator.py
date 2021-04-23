@@ -53,8 +53,7 @@ def angle_leg_algebra(p, c_1):
         g = math.cos(math.radians(p))
         g = round(g, 2)
         
-        adj = (c_1)/(1)
-        adj = (g)*(adj)
+        adj = (g)*(c_1)
         adj = round(adj, 2)
         
         v = "Opposite Leg: {}\nHypotenuse: {}\nAdjecent Leg: {}\nOpposite Angle: {}".format(opp, hyp, adj, opp_angle)
