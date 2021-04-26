@@ -1,17 +1,5 @@
 import math
 
-decision = input("Return 0 if two angles and one leg are given. \nReturn 1 if one angle and two legs are given.\n")
-
-if "0" in decision:
-    ang_2 = True
-else:
-    ang_2 = False
-
-if "1" in decision: 
-   two_leg = True
-else:
-    leg_2 = False
-    
 def law_of_sines():    
 
     if ang_2 == True:
@@ -73,8 +61,8 @@ def law_of_sines():
             sin_1 = math.sin(math.radians(angle_1))
             
             # use algebra to find the second angle
-            ratio = (sin_1)*(leg_2)
-            angle_2_sin = (ratio)/(leg_1)
+            ratio = (sin_1)*(leg_1)
+            angle_2_sin = (ratio)/(leg_2)
             angle_2_sin = math.asin(angle_2_sin)
             
             angle_2 = (angle_2_sin)*57.2957795131
@@ -87,7 +75,7 @@ def law_of_sines():
             sin_3 = math.sin(math.radians(angle_3))
             
             # find third leg
-            ratio = (leg_1)*(sin_3)
+            ratio = (leg_2)*(sin_3)
             leg_3 = (ratio)/(sin_1)
             
             # make .0's whole numbers.    
@@ -116,6 +104,27 @@ def law_of_sines():
             
             return v
         except:
-            print("\n\nYou must input 1 angle and two legs!")
+            print("\n\nYou must input a real triangle!\nYou inputted an impossible triangle!")
             exit()
+
+decision = input("Return 0 if two angles and one leg are given. \nReturn 1 if one angle and two legs are given.\n")
+
+if decision != "0":
+    if decision != "1":
+        print("\n\nYou must return either 1 or 0!")
+        exit()
+    else:
+        pass
+
+if "0" in decision:
+    ang_2 = True
+else:
+    ang_2 = False
+
+if "1" in decision: 
+   two_leg = True
+else:
+    leg_2 = False
+    
+
 print("\n{}".format(law_of_sines()))
