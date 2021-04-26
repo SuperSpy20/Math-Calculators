@@ -1,6 +1,6 @@
 import math
 
-def law_of_sines():    
+def law_of_sines(ang_2, two_leg):    
 
     if ang_2 == True:
         try:
@@ -124,7 +124,7 @@ else:
 if "1" in decision: 
    two_leg = True
 else:
-    leg_2 = False
+    two_leg = False
     
 
-print("\n{}".format(law_of_sines()))
+print("\n{}".format(law_of_sines(ang_2, two_leg)))
