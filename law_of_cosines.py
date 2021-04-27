@@ -71,10 +71,12 @@ def law_of_cosines_ang(a,b,c):
         
             # now that we've solved the whole triangle, were going to print it out for the user.
             print("\nLeg A: {}\nLeg B: {}\nLeg C: {}\n\nAngle A: {}°\nAngle B: {}°\nAngle C: {}°".format(a,b,c,angle_a,angle_b,angle_c))
+        
         if leg_3 == True:        
             # call the function
             three_legs(a, b, c, leg_3, leg_2)
             # now let's do the 1 angle 2 leg calculator
+        
         if leg_2 == True:
             # solves for the pythagorean theorem section of the equation.
             pythagorean_theorem = (c**2)+(b**2)
