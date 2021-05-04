@@ -2,6 +2,9 @@ import statistics
 import math
 
 def standard_deviation(set):
+    for z, i in enumerate(set):
+        
+
     def sample(set_samp):
         q = sum(set_samp)
         p = len(set_samp)
@@ -33,4 +36,6 @@ def standard_deviation(set):
     print("Sample Standard Deviation: {}".format(round(avg_sqrt, 2)))
 
 set = input("What is your given set/list?\n").split(",")
+set = list(map(float, set))
+
 standard_deviation(set)
