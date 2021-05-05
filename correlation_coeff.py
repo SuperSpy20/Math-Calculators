@@ -59,7 +59,7 @@ def correl_coeff(x, y):
     
     print(correlation_coeff)
 # grabs the user's x set    
-x = [44,21,25,43,58]#input("What is the first set (x)?\n").split(",")
+x = input("What is the first set (x)?\n").split(",")
 
 # check that each element in the set is a number
 try:
@@ -73,7 +73,7 @@ except:
     print("\n\nYou must supply a set of numbers!")
 
 # grabs the user's y set
-y = [99,64,79,75,87]#input("What is the second set (y)?\n").split(",")
+y = input("What is the second set (y)?\n").split(",")
 
 # does the same, check that each element in the set is a number
 try:
