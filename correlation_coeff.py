@@ -58,6 +58,10 @@ def correl_coeff(x, y):
     correlation_coeff = round((top)/(bottom), 3)
     
     print(correlation_coeff)
+    
+    
+    
+### Main
 # grabs the user's x set    
 x = input("What is the first set (x)?\n").split(",")
 
