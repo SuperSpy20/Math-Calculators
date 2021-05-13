@@ -4,7 +4,7 @@ def correl_coeff(x, y):
     # finding the sum of each x and y list
     x_sum = sum(x)
     y_sum = sum(y)
-
+    
     xy = []
     # mutliplying each element in the set by the other
     
